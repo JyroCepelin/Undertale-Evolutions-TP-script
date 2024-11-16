@@ -5,7 +5,7 @@ screenGui.Name = "CustomGui"
 local menuButton = Instance.new("TextButton", screenGui)
 menuButton.Name = "Menu"
 menuButton.Size = UDim2.new(0, 80, 0, 40)
-menuButton.Position = UDim2.new(0, 10, 0, 10)
+menuButton.Position = UDim2.new(0, 10, 0, 250)
 menuButton.Text = "Menu"
 menuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 menuButton.TextColor3 = Color3.fromRGB(85, 255, 0)
@@ -53,7 +53,7 @@ for _, data in ipairs(buttonData) do
 	local button = createButton(data.name, data.position, data.size, data.backColor, data.textColor, data.strokeColor, data.text)
 	if data.name == "close" then
 		button.MouseButton1Click:Connect(function()
-			movableFrame:Destroy()
+			screenGui:Destroy()
 		end)
 	elseif data.cframe then
 		button.MouseButton1Click:Connect(function()
